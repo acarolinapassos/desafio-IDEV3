@@ -8,46 +8,71 @@ const users = [{
 // console.table(users)
 
 function create(email, senha, admin) {
-    if (email, senha, admin != null) {
 
-        var id = users.length
-        users.push({
-            id: id,
-            email: email,
-            senha: senha,
-            admin: admin
-        })
-        return 'Usuário criado com sucesso!'
+    const e = typeof(email)
+    const s = typeof(senha)
+
+
+    if (email, senha, admin != null) {
+        if (e == s) {
+
+            var id = users.length
+            users.push({
+                id: id,
+                email: email,
+                senha: senha,
+                admin: admin
+            })
+            return 'Usuário criado com sucesso!'
+        }
+
     } else {
         return "Campo está vazio"
     }
-
-
-
 }
 
-function delet(index) {
+function destroy(index) {
     if (!users[index]) {
         return 'Usuário não existe!!'
     } else {
         users.splice(index, 1)
-        return users
+        return index()
     }
-
 
 }
 
-function list() {
+function findByPk(...args) {
+
+    const [id, email] = args
+
+    if (id !== " ") {
+        if (id !== null) {
+
+            for (const index in users) {
+                let key = users[index];
+                if (key.id == id || key.email == email) {
+                    return users[index];
+                }
+            }
+
+            return "Usuário ou email incorreto.";
+        }
+    } else {
+        return "O id está incorreto."
+    }
+}
+
+function index() {
     return users;
 }
 
 function login(email, senha) {
     for (const index in users) {
-        let x = users[index];
-        if (x.email == email) {
-            if (x.senha == senha) {
-                return "usuario conectado"
-                break;
+        let key = users[index];
+        if (key.email == email) {
+            if (key.senha == senha) {
+                return "usuario conectado";
+
             }
 
         }
@@ -57,7 +82,7 @@ function login(email, senha) {
 
 }
 
-const init = create("1234", false)
+const init = create("1234", false);
 const init2 = create("teste@gmail.com", "4321", true)
 
 // console.table(init)
@@ -66,5 +91,9 @@ const init2 = create("teste@gmail.com", "4321", true)
 // let del = delet(1)
 // console.table(del)
 
-console.log(login("teste@gmail.co", "4321"))
-console.table(list())
+console.log(login("teste@gmail.com", "4321"));
+console.table(index());
+console.table(findByPk(1, "teste@gmail.com"))
+
+const s = typeof(" ")
+console.log(s)
