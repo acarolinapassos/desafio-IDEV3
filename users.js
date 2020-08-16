@@ -81,6 +81,7 @@ function login(email, senha) {
 
     for (const index in users) {
         let key = users[index];
+
         if (key.email == email) {
             if (key.senha == senha) {
                 return "usuario conectado";
