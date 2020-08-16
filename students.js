@@ -1,11 +1,11 @@
 const students = [{
 
-    id,
-    nome,
-    genero,
-    dataDeNascimento,
-    turma,
-    curso
+    id: "ID",
+    nome: "nome",
+    genero: "genero",
+    dataDeNascimento: "dataDeNascimento",
+    turma: "dataDeNascimento",
+    curso: "dataDeNascimento"
 }]
 
 function create(nome, genero, dataDeNascimento, trume, curso) {
@@ -76,12 +76,17 @@ function update(id, ...args) {
 
 }
 
-function destroy(index) {
-    if (!users[index]) {
-        return 'Aluno não existe!!';
+function destroy(id) {
+    if (!students[id]) {
+        return 'Estudante não existe!!'
     } else {
-        users.splice(index, 1);
-        return index();
+        for (const index in students) {
+            let key = students[index];
+            if (key.id == id) {
+                students.splice(index, 1)
+                return students
+            }
+        }
     }
 
 }
