@@ -22,8 +22,8 @@ function create(email, senha, admin) {
 
             users.push({
                 id,
-                email: email,
-                senha: senha,
+                email: email.toLocaleUpperCase(),
+                senha: senha.toLocaleUpperCase(),
                 admin: admin
             })
             return 'Usuário criado com sucesso!'
@@ -81,7 +81,6 @@ function login(email, senha) {
 
     for (const index in users) {
         let key = users[index];
-
         if (key.email == email) {
             if (key.senha == senha) {
                 return "usuario conectado";

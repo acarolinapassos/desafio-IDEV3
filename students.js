@@ -4,42 +4,40 @@ const students = [{
     nome: "nome",
     genero: "genero",
     dataDeNascimento: "dataDeNascimento",
-    turma: "dataDeNascimento",
-    curso: "dataDeNascimento"
+    turma: "turma",
+    curso: "curso"
 }]
 
-function create(nome, genero, dataDeNascimento, trume, curso) {
-
+function create(nome, genero, dataDeNascimento, turma, curso) {
+    // toLocaleUpperCase(nome, genero, dataDeNascimento, turma, curso)
     const n = typeof(nome);
     const g = typeof(genero);
-    const t = typeof(trume);
+    const t = typeof(turma);
     const c = typeof(curso);
     const d = typeof(dataDeNascimento);
 
-    if (nome, genero, dataDeNascimento, trume, curso != null) {
+    if (nome, genero, dataDeNascimento, turma, curso != null) {
 
         if (n == g) {
             if (t == c) {
-                if (d == Date()) {
+                var id = students.length;
 
-                    var id = users.length;
+                students.push({
+                    id,
+                    nome: nome.toLocaleUpperCase(),
+                    genero: genero.toLocaleUpperCase(),
+                    dataDeNascimento: dataDeNascimento,
+                    turma: turma.toLocaleUpperCase(),
+                    curso: curso.toLocaleUpperCase()
 
-                    users.push({
-                        id,
-                        nome: "nome",
-                        genero: "genero",
-                        dataDeNascimento: "dataDeNascimento",
-                        turma: "turma",
-                        curso: "curso"
-
-                    })
-                    return 'Usuário criado com sucesso!';
-                }
-            }
-        }
+                });
+                return 'Usuário criado com sucesso!';
+            };
+        };
     } else {
         return "Campo está vazio";
-    }
+    };
+    return "Cadastro criado com sucesso.";
 
 }
 
@@ -71,9 +69,17 @@ function findOne(...args) {
 }
 
 function update(id, ...args) {
-    students[id] = args;
-    return students[id];
 
+    const [nome, genero, dataDeNascimento, turma, curso] = args
+
+    students[id] = {
+        id,
+        nome,
+        genero,
+        dataDeNascimento,
+        turma,
+        curso
+    };
 }
 
 function destroy(id) {
@@ -88,5 +94,17 @@ function destroy(id) {
             }
         }
     }
-
 }
+
+let data = new Date("1991/1/18")
+
+create("vinicius", "M", data, "Programação", "JS");
+create("vinicius", "M", data, "Programação", "JS");
+
+console.table(index());
+
+console.table(destroy(1))
+console.table(index());
+
+update(1, "ana", "f", data, "Programação", "pyton");
+console.table(index());
