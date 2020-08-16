@@ -36,7 +36,7 @@ function destroy(index) {
         return 'Usuário não existe!!'
     } else {
         users.splice(index, 1)
-        return index()
+        return users
     }
 
 }
@@ -72,14 +72,10 @@ function login(email, senha) {
         if (key.email == email) {
             if (key.senha == senha) {
                 return "usuario conectado";
-
             }
-
         }
     }
     return "usuário ou senha incorreto";
-
-
 }
 
 const init = create("1234", false);
@@ -88,8 +84,8 @@ const init2 = create("teste@gmail.com", "4321", true)
 // console.table(init)
 // console.table(init2)
 
-// let del = delet(1)
-// console.table(del)
+let del = destroy(1)
+console.table(del)
 
 console.log(login("teste@gmail.com", "4321"));
 console.table(index());

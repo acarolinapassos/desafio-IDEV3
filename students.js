@@ -20,7 +20,6 @@ function create(nome, genero, dataDeNascimento, trume, curso) {
 
         if (n == g) {
             if (t == c) {
-
                 if (d == Date()) {
 
                     var id = users.length;
