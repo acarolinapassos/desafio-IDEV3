@@ -18,7 +18,7 @@ function create(email, senha, admin) {
 
             var id = users.length
             users.push({
-                id: id,
+                id,
                 email: email,
                 senha: senha,
                 admin: admin

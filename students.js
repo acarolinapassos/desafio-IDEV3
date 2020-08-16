@@ -23,9 +23,10 @@ function create(nome, genero, dataDeNascimento, trume, curso) {
 
                 if (d == Date()) {
 
-
                     var id = users.length;
+
                     users.push({
+                        id,
                         nome: "nome",
                         genero: "genero",
                         dataDeNascimento: "dataDeNascimento",
