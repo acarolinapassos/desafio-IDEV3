@@ -1,15 +1,7 @@
-const students = [{
-
-    id: "ID",
-    nome: "nome",
-    genero: "genero",
-    dataDeNascimento: "dataDeNascimento",
-    turma: "turma",
-    curso: "curso"
-}]
+const students = []
 
 function create(nome, genero, dataDeNascimento, turma, curso) {
-    // toLocaleUpperCase(nome, genero, dataDeNascimento, turma, curso)
+
     const n = typeof(nome);
     const g = typeof(genero);
     const t = typeof(turma);
@@ -20,6 +12,7 @@ function create(nome, genero, dataDeNascimento, turma, curso) {
 
         if (n == g) {
             if (t == c) {
+
                 var id = students.length;
 
                 students.push({
@@ -46,25 +39,24 @@ function index() {
 
 }
 
-function findOne(...args) {
+function findOne(id) {
 
-    const [id, nome] = args;
 
-    if (id !== " ") {
-        if (id !== null) {
 
-            for (const index in users) {
-                let key = users[index];
-                if (key.id == id || key.nome == nome) {
-                    return users[index];
-                }
-            }
+    // if (id !== " ") {
+    // if (id !== null) {
 
-            return "Usuário ou nome incorreto.";
+    for (const index in students) {
+        let key = students[index];
+        if (key.id == id) {
+            return students[index];
         }
-    } else {
-        return "O id está incorreto.";
     }
+
+    // return "ID ou nome incorreto.";
+    // } else {
+    //     return "O id está incorreto.";
+    // }
 
 }
 
@@ -106,5 +98,7 @@ console.table(index());
 console.table(destroy(1))
 console.table(index());
 
-update(1, "ana", "f", data, "Programação", "pyton");
-console.table(index());
+console.table(findOne(0))
+
+// update(1, "ana", "f", data, "Programação", "pyton");
+// console.table(index());

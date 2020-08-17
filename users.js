@@ -1,9 +1,4 @@
-const users = [{
-    id: 'ID',
-    email: 'EMAIL',
-    senha: 'SENHA',
-    admin: 'ADMIN'
-}]
+const users = []
 
 // console.table(users)
 
@@ -16,7 +11,7 @@ function create(email, senha, admin) {
     if (email, senha, admin != null) {
         if (e == s) {
 
-            // if (a == Boolean) {
+            // if (!a) {
 
             var id = users.length
 
@@ -95,7 +90,7 @@ const init2 = create("teste@gmail.com", '4321', true)
 console.table(init2)
 console.table(index())
 
-console.table(destroy(2))
+console.table(destroy(0))
 
 
 // console.table(init)
