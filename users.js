@@ -11,8 +11,6 @@ function create(email, senha, admin) {
     if (email, senha, admin != null) {
         if (e == s) {
 
-            // if (!a) {
-
             var id = users.length
 
             users.push({
@@ -22,7 +20,7 @@ function create(email, senha, admin) {
                 admin: admin
             })
             return 'Usuário criado com sucesso!'
-                // }
+
         } else {
             return 'O email ou senha está incorreto.'
         }
@@ -51,7 +49,7 @@ function findByPk(...args) {
 
     const [id, email] = args
 
-    // if (id !== " ") {
+
     if (id !== null) {
 
         for (const index in users) {
@@ -62,7 +60,7 @@ function findByPk(...args) {
         }
 
         return "Usuário ou email incorreto.";
-        //   }
+
     } else {
         return "O id está incorreto."
     }

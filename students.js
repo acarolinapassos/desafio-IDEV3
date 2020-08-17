@@ -41,28 +41,24 @@ function index() {
 
 function findOne(id) {
 
-
-
-    // if (id !== " ") {
-    // if (id !== null) {
-
     for (const index in students) {
         let key = students[index];
         if (key.id == id) {
             return students[index];
         }
     }
-
-    // return "ID ou nome incorreto.";
-    // } else {
-    //     return "O id está incorreto.";
-    // }
-
 }
 
-function update(id, ...args) {
+function update(id, nome, genero, dataDeNascimento, turma, curso) {
 
-    const [nome, genero, dataDeNascimento, turma, curso] = args
+
+    // let [nome, genero, dataDeNascimento, turma, curso] = args
+
+    nome = nome.toLocaleUpperCase();
+    genero = genero.toLocaleUpperCase();
+    turma = turma.toLocaleUpperCase();
+    curso = curso.toLocaleUpperCase();
+
 
     students[id] = {
         id,
@@ -72,6 +68,7 @@ function update(id, ...args) {
         turma,
         curso
     };
+
 }
 
 function destroy(id) {
@@ -88,7 +85,7 @@ function destroy(id) {
     }
 }
 
-let data = new Date("1991/1/18")
+let data = new Date('1991, 4, 18')
 
 create("vinicius", "M", data, "Programação", "JS");
 create("vinicius", "M", data, "Programação", "JS");
@@ -100,5 +97,5 @@ console.table(index());
 
 console.table(findOne(0))
 
-// update(1, "ana", "f", data, "Programação", "pyton");
-// console.table(index());
+update(1, "ana", "f", data, "Programação", "pyton");
+console.table(index());
