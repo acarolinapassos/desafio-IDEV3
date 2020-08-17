@@ -85,17 +85,17 @@ function destroy(id) {
     }
 }
 
-let data = new Date('1991, 4, 18')
+// let data = new Date('1991, 4, 18')
 
-create("vinicius", "M", data, "Programação", "JS");
-create("vinicius", "M", data, "Programação", "JS");
+// create("vinicius", "M", data, "Programação", "JS");
+// create("vinicius", "M", data, "Programação", "JS");
 
-console.table(index());
+// console.table(index());
 
-console.table(destroy(1))
-console.table(index());
+// console.table(destroy(1))
+// console.table(index());
 
-console.table(findOne(0))
+// console.table(findOne(0))
 
-update(1, "ana", "f", data, "Programação", "pyton");
-console.table(index());
+// update(1, "ana", "f", data, "Programação", "pyton");
+// console.table(index());

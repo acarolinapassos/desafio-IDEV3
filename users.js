@@ -83,12 +83,12 @@ function login(email, senha) {
     return "usuário ou senha incorreto";
 }
 
-const init = create("ana@gmail.com", "1234", false);
-const init2 = create("teste@gmail.com", '4321', true)
-console.table(init2)
-console.table(index())
+// const init = create("ana@gmail.com", "1234", false);
+// const init2 = create("teste@gmail.com", '4321', true)
+// console.table(init2)
+// console.table(index())
 
-console.table(destroy(0))
+// console.table(destroy(0))
 
 
 // console.table(init)
